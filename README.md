@@ -14,7 +14,7 @@ For use on the terminal:
 5. `account.debit(20)`
 6. `account.statement`
 
-![Imgur](https://imgur.com/PTUiquM)
+![Imgur](https://imgur.com/PTUiquM.jpeg)
 
 ### The spec: 
  - You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a  command line interface that takes input from STDIN.)
