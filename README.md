@@ -23,4 +23,4 @@ For use on the terminal:
 ### Approach: 
 I created a model of the app which I determined would need the following features - credit, debit and statement. I therefore decided to create one class of "Account" with these three features as method names. The statement also required a date feature, however I decided to use the Time.now feature as part of the initialization method. I also initialized an account with a balance of zero.
 
-![Imagur](https://i.imgur.com/stg4GbV.mp4)
+![](Bank tech text recording.mov)
