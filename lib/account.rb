@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
+require_relative 'schedule'
 class Account
-  attr_reader :balance, :transactions, :date
+  attr_reader :balance
   def initialize(balance = 0)
     @balance = balance
-    @transactions = []
-    @date = Time.now
+    @schedule = Schedule.new
   end
 
-  def credit(amount)
-    @balance += amount
-    @transactions << "#{@date.strftime('%d/%m/%Y')} || #{'%.2f' % amount} || || #{'%.2f' % @balance}"
+  def deposit(credit_amount)
+    @balance += credit_amount
+    @schedule.submit(('%.2f' % credit_amount), nil, ('%.2f' % balance))
   end
 
-  def debit(amount)
-    @balance -= amount
-    @transactions << "#{@date.strftime('%d/%m/%Y')} || || #{'%.2f' % amount} || #{'%.2f' % @balance}"
+  def withdraw(debit_amount)
+    @balance -= debit_amount
+    @schedule.submit(nil, ('%.2f' % debit_amount), ('%.2f' % balance))
   end
 
   def statement
-    "date || credit || debit || balance\\n" + @transactions.join("\\n")
+    @schedule.statement
   end
 end
